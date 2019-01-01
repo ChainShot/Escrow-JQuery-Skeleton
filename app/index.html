@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Escrow Application</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container py-3 px-4 my-3 border">
+        <h1> Deployment Function </h1>
+        <p class="font-weight-light">
+            This is the function used to deploy your Escrow Contract.
+            Try using it with metamask to send the transactions.
+        </p>
+        <form class="p-sm">
+            <div class="form-group">
+                <label htmlFor="ether">
+                    Amount of Wei
+                    <input type="number" class="form-control" id="ether" placeholder="Ether Amount"/>
+                </label>
+            </div>
+            <div class="form-group">
+                <label htmlFor="arbiter">
+                    Arbiter Address
+                    <input type="text" class="form-control" id="arbiter" placeholder="Address"/>
+                </label>
+            </div>
+            <div class="form-group">
+                <label htmlFor="beneficiary">
+                    Beneficiary Address
+                    <input type="text" class="form-control" id="beneficiary" placeholder="Address"/>
+                </label>
+            </div>
+            <div class="btn btn-primary" id="deploy">Deploy</div>
+        </form>
+        <ul class="transaction-list py-3" id="deployment-transactions"></ul>
+    </div>
+    <div class="container py-3 px-4 my-3 border">
+        <h1> Approve Function </h1>
+        <p class="font-weight-light">
+            This is the function the arbiter uses to approve the transaction.
+            First you'll need to deploy an escrow contract before you can approve it.
+            Then, use the address from the contract and approve it.
+        </p>
+        <form>
+            <div class="form-group">
+                <label htmlFor="beneficiary">Escrow Address
+                    <input type="text" class="form-control" id="escrow" placeholder="Contract Address"/>
+                </label>
+            </div>
+            <div class="btn btn-primary" id="approve">Approve</div>
+        </form>
+        <ul class="transaction-list py-3" id="approve-transactions"></ul>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
